@@ -1,35 +1,27 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-const HeaderBox = styled.div`
-
-
-
-
-`
+const HeaderBox = styled.div``;
 
 const OptionsDisplay = styled.ul`
+  display: flex;
 
-display: flex ;
-width: 80%;
-justify-content: space-between;
-margin:auto; 
-padding: calc(10px + 2vmin);
-list-style-type: none;
+  justify-content: space-between;
 
-li{
-  :hover{
-    color:red;
+  padding: calc(10px + 2vmin);
+  list-style-type: none;
+  font-weight: bold;
+
+  li {
+    :hover {
+      color: red;
+    }
   }
-}
-`
-
-
+`;
 
 function Header() {
   return (
     <HeaderBox>
       <OptionsDisplay>
-
         <li>Home</li>
         <li>Sobre</li>
         <li>Projetos</li>

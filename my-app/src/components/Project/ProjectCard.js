@@ -17,16 +17,8 @@ const BoardBox = styled.div`
   font-family: "JetBrains Mono", monospace;
 `;
 
-function Board() {
-  return (
-    <BoardBox>
-      <Header />
-      <About />
-      <Skills />
-      <Projects />
-      <Footer />
-    </BoardBox>
-  );
+function ProjectCard() {
+  return <BoardBox></BoardBox>;
 }
 
-export default Board;
+export default ProjectCard;
