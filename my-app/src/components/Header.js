@@ -23,9 +23,9 @@ function Header() {
     <HeaderBox>
       <OptionsDisplay>
         <li>Home</li>
-        <li>Sobre</li>
-        <li>Projetos</li>
-        <li>Curriculo</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Resume</li>
       </OptionsDisplay>
     </HeaderBox>
   );

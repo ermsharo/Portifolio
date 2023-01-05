@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-const ProjectsBox = styled.div`
+const ProjectsCardBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   grid-gap: 32px;
+`;
+
+const ProjectsBox = styled.div`
+  margin: 32px;
+  h2 {
+    padding: 32px 0px;
+  }
 `;
 
 const ProjectCard = styled.div`
@@ -45,16 +52,19 @@ for (let i = 0; i < 5; i++) projetos.push(fillProject());
 function Projects() {
   return (
     <ProjectsBox>
-      {projetos.map((project) => {
-        return (
-          <ProjectCard>
-            <ProjectImage>
-              <img src={project.image} />
-            </ProjectImage>
-            <ProjectDescription>{project.name}</ProjectDescription>
-          </ProjectCard>
-        );
-      })}
+      <h2>Projects</h2>
+      <ProjectsCardBox>
+        {projetos.map((project) => {
+          return (
+            <ProjectCard>
+              <ProjectImage>
+                <img src={project.image} />
+              </ProjectImage>
+              <ProjectDescription>{project.name}</ProjectDescription>
+            </ProjectCard>
+          );
+        })}
+      </ProjectsCardBox>
     </ProjectsBox>
   );
 }
