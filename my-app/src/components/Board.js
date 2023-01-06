@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import AboutInfo from "./AboutInfo";
-
+import Contact from "./Contact";
 import styled from "styled-components";
 
 const BoardBox = styled.div`
@@ -23,9 +23,10 @@ function Board() {
     <BoardBox>
       <Header />
       <About />
-      <AboutInfo/>
+      <AboutInfo />
       <Skills />
       <Projects />
+      <Contact />
       <Footer />
     </BoardBox>
   );

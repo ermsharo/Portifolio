@@ -7,7 +7,7 @@ const OptionsDisplay = styled.ul`
 
   justify-content: space-between;
   justify-content: flex-end;
-  gap:32px;
+  gap: 32px;
 
   padding: calc(8px + 2vmin);
   list-style-type: none;

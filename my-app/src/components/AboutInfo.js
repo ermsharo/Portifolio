@@ -21,32 +21,28 @@ const AboutBox = styled.div`
     width: fit-content;
     column-gap: 32px;
   }
-  h2{
+  h2 {
     color: darkgrey;
     padding: 0px;
     border: 0px;
     margin: 0px;
-
   }
-  h1{
+  h1 {
     padding-bottom: 10px;
     border: 0px;
     margin: 0px;
   }
-  h3{
+  h3 {
     font-size: 24px;
     font-family: "JetBrains Mono", monospace;
-    
   }
 `;
 
 const AboutBoxText = styled.div`
- display: flex ;
- justify-content: center;
- flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
-
-
 
 const AboutBoxImage = styled.div`
   width: 50%;
@@ -60,41 +56,34 @@ function AboutInfo() {
   return (
     <AboutBox>
       <AboutBoxText>
-   
-
         <h2>About me</h2>
         <h3>
-        <p>Web developer, with experience in developing messaging
-program, logistics products, internet of things and
-technological solutions for the journalism sector.</p> 
-        <p>
-        My main
-skills are related to creating elegant and well-structured
-solutions, always prioritizing accessibility, security, and
-performance.
-        </p>
+          <p>
+            Web developer, with experience in developing messaging program,
+            logistics products, internet of things and technological solutions
+            for the journalism sector.
+          </p>
+          <p>
+            My main skills are related to creating elegant and well-structured
+            solutions, always prioritizing accessibility, security, and
+            performance.
+          </p>
 
-        <p>
-        Working recently thecnologies: 
-<ul>
-
-<li>JavaScript (ES6+)</li>
-<li>TypeScript</li>
-<li>Node.js</li>
-<li>Next.js</li>
-<li>PHP</li>
-<li>WordPress</li>
-<li>Python</li>
-<li>Flask</li>
-
-</ul>
-        </p>
-
-
+          <p>
+            Working recently thecnologies:
+            <ul>
+              <li>JavaScript (ES6+)</li>
+              <li>TypeScript</li>
+              <li>Node.js</li>
+              <li>Next.js</li>
+              <li>PHP</li>
+              <li>WordPress</li>
+              <li>Python</li>
+              <li>Flask</li>
+            </ul>
+          </p>
         </h3>
-
       </AboutBoxText>
-
     </AboutBox>
   );
 }

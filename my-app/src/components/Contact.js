@@ -16,8 +16,7 @@ const ProjectsBox = styled.div`
     margin: 0px;
     text-transform: capitalize;
     text-align: left;
-  padding: 32px 0px;
-
+    padding: 32px 0px;
   }
 `;
 
@@ -59,20 +58,7 @@ for (let i = 0; i < 5; i++) projetos.push(fillProject());
 function Contact() {
   return (
     <ProjectsBox>
-      <h2>Projects</h2>
-      <ProjectsCardBox>
-        {projetos.map((project) => {
-          return (
-            <ProjectCard>
-              <ProjectImage>
-                <img src={project.image} />
-              </ProjectImage>
-              <ProjectDescription><h3>{project.name}</h3></ProjectDescription>
-              <ProjectDescription><h4>{project.stacks}</h4></ProjectDescription>
-            </ProjectCard>
-          );
-        })}
-      </ProjectsCardBox>
+      <h2>Contact</h2>
     </ProjectsBox>
   );
 }

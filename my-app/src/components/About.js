@@ -16,13 +16,13 @@ const AboutBox = styled.div`
     font-size: 32px;
     font-weight: bolder;
   }
-  h2{
+  h2 {
     color: darkgrey;
     padding: 0px;
     border: 0px;
     margin: 0px;
   }
-  h1{
+  h1 {
     padding-bottom: 10px;
     border: 0px;
     margin: 0px;
@@ -30,12 +30,10 @@ const AboutBox = styled.div`
 `;
 
 const AboutBoxText = styled.div`
- display: flex ;
- justify-content: center;
- flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
-
-
 
 const AboutBoxImage = styled.div`
   width: 50%;
