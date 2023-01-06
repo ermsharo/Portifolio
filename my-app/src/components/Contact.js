@@ -56,7 +56,7 @@ const fillProject = () => {
 let projetos = [];
 for (let i = 0; i < 5; i++) projetos.push(fillProject());
 
-function Projects() {
+function Contact() {
   return (
     <ProjectsBox>
       <h2>Projects</h2>
@@ -77,4 +77,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Contact;

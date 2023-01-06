@@ -6,14 +6,17 @@ const OptionsDisplay = styled.ul`
   display: flex;
 
   justify-content: space-between;
+  justify-content: flex-end;
+  gap:32px;
 
-  padding: calc(10px + 2vmin);
+  padding: calc(8px + 2vmin);
   list-style-type: none;
   font-weight: bold;
 
   li {
     :hover {
-      color: red;
+      opacity: 0.9;
+      cursor: pointer;
     }
   }
 `;
