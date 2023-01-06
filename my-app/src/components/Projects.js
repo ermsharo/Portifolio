@@ -11,6 +11,7 @@ const ProjectsBox = styled.div`
   margin: 32px;
   h2 {
     padding: 32px 0px;
+    text-align: center;
   }
 `;
 
@@ -60,7 +61,8 @@ function Projects() {
               <ProjectImage>
                 <img src={project.image} />
               </ProjectImage>
-              <ProjectDescription>{project.name}</ProjectDescription>
+              <ProjectDescription><h3>{project.name}</h3></ProjectDescription>
+              <ProjectDescription><h3>{project.stacks}</h3></ProjectDescription>
             </ProjectCard>
           );
         })}

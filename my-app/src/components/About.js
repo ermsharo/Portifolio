@@ -12,6 +12,7 @@ const AboutBox = styled.div`
   margin: 32px auto;
   ul {
     font-family: "JetBrains Mono", monospace;
+    padding: 0;
     list-style-type: none;
   }
 `;
@@ -29,13 +30,13 @@ function About() {
     <AboutBox>
       <div>
         {" "}
-        <h1>Hi, I'm Emilio</h1>
+        <h1>Hi, I'm Emilio Haro</h1>
         <h2>I'm a Full Stack Developer.</h2>
         <ul>
-          <li>{"->"} Desenvolvedor web</li>
-          <li>{"->"} Desenvolvedor web</li>
-          <li>{"->"} Desenvolvedor web</li>
-          <li>{"->"} Desenvolvedor web</li>
+          <li>{"->"} Based in Brazil</li>
+          <li>{"->"} Working 5 years as web developer</li>
+          <li>{"->"} Powered by coffee</li>
+          <li>{"->"} Sometimes game developer</li>
         </ul>
       </div>
       <AboutBoxImage>
