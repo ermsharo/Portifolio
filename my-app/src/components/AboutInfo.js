@@ -44,11 +44,22 @@ const AboutBoxText = styled.div`
   flex-direction: column;
 `;
 
+const AboutInfoBox = styled.div`
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-column-gap: 64px;
+  padding: 32px;
+  width: 80%;
+  margin: auto;
+`;
+
 const AboutBoxImage = styled.div`
-  width: 50%;
+  margin: auto;
   img {
     width: 100%;
+    border-radius: 50%;
   }
+  border-radius: 50%;
 `;
 
 function AboutInfo() {
@@ -57,32 +68,41 @@ function AboutInfo() {
     <AboutBox>
       <AboutBoxText>
         <h2>About me</h2>
-        <h3>
-          <p>
-            Web developer, with experience in developing messaging program,
-            logistics products, internet of things and technological solutions
-            for the journalism sector.
-          </p>
-          <p>
-            My main skills are related to creating elegant and well-structured
-            solutions, always prioritizing accessibility, security, and
-            performance.
-          </p>
+        <AboutInfoBox>
+          <AboutBoxImage>
+            {" "}
+            <img src="https://i.ibb.co/84spN8k/perfil.jpg" />
+          </AboutBoxImage>
+          <div>
+            {" "}
+            <h3>
+              <p>
+                Web developer, with experience in developing messaging program,
+                logistics products, internet of things and technological
+                solutions for the journalism sector.
+              </p>
+              <p>
+                My main skills are related to creating elegant and
+                well-structured solutions, always prioritizing accessibility,
+                security, and performance.
+              </p>
 
-          <p>
-            Working recently thecnologies:
-            <ul>
-              <li>JavaScript (ES6+)</li>
-              <li>TypeScript</li>
-              <li>Node.js</li>
-              <li>Next.js</li>
-              <li>PHP</li>
-              <li>WordPress</li>
-              <li>Python</li>
-              <li>Flask</li>
-            </ul>
-          </p>
-        </h3>
+              <p>
+                Working recently thecnologies:
+                <ul>
+                  <li>JavaScript (ES6+)</li>
+                  <li>TypeScript</li>
+                  <li>Node.js</li>
+                  <li>Next.js</li>
+                  <li>PHP</li>
+                  <li>WordPress</li>
+                  <li>Python</li>
+                  <li>Flask</li>
+                </ul>
+              </p>
+            </h3>
+          </div>
+        </AboutInfoBox>
       </AboutBoxText>
     </AboutBox>
   );
