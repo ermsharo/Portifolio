@@ -52,8 +52,12 @@ const NewCardBox = styled.div`
   padding-top: 32px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap: 16px;
+  
+  margin: auto;
+  gap:32px;
+  width: 70%;
+  border-top: 32px;
+
 `;
 
 function Contact() {
@@ -76,10 +80,11 @@ function Contact() {
 
   return (
     <AboutBox>
+      <h2>Contato </h2>
   <NewCardBox>
 
 <ThemeProvider theme={darkTheme}>
-<h2>Contato</h2>
+
       <CssBaseline />
       <TextField
         fullWidth
