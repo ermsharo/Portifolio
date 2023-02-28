@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ProjectsCarrosel from "../../UI/organism/ProjectsCarrosel";
 export interface ProjectsProps {}
 
 const HomeBannerBoxElements = styled.div`
@@ -34,7 +35,7 @@ function Projects({ }: ProjectsProps) {
     return ( <SessionBox>
         <h1>Projects</h1>
 
-
+      <ProjectsCarrosel/>
       </SessionBox>);
 };
 
