@@ -1,15 +1,42 @@
 import GlobalStyle from "./styles/globalStyles";
 import { Helmet } from "react-helmet";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
+import Header from "./UI/molecules/Header";
+
 function App() {
+  
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <ErrorPage />,
+    },
+    // {
+    //   path: "contacts/:contactId",
+    //   element: <Contact />,
+    // },
+  ]);
+
+
   return (
     <>
       <Helmet>
         <title>Emilio Haro</title>
-          <link rel="icon" href="https://i.stack.imgur.com/bJ120.png" />
-        {/* <link rel="icon" type="image/png" href="https://w7.pngwing.com/pngs/191/128/png-transparent-space-invaders-golden-age-of-arcade-video-games-jungle-hunt-pitfall-centipede-space-invaders-angle-white-text-thumbnail.png"/> */}
+        <link rel="icon" href="https://i.stack.imgur.com/bJ120.png" />
         <meta name="description" content="Emilio Haro portifolio" />
-          <link rel="apple-touch-icon" href="https://i.stack.imgur.com/bJ120.png" />
+        <link
+          rel="apple-touch-icon"
+          href="https://i.stack.imgur.com/bJ120.png"
+        />
       </Helmet>
+      <Header/>
+      <RouterProvider router={router} />
       <GlobalStyle />
     </>
   );
