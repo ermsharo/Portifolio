@@ -8,10 +8,10 @@ const HomeBannerBoxElements = styled.div`
   display: grid;
   grid-template-columns: 60% 40%;
 
-  height: 65%;
 `;
 
 const HomeBannerBox = styled.div`
+padding: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -40,7 +40,7 @@ function HomeBanner({}: HomeBannerProps) {
       <HomeBannerBoxElements>
         <InfoBox>
           <SessionTitle>
-            <div>Hi I'm Emilio Haro 👨‍💻</div>
+            <div>Hi I'm Emilio Haro </div>
             <div>Fullstack developer</div>
           </SessionTitle>
           <SessionSubtitle>

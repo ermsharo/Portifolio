@@ -47,7 +47,7 @@ function Header({}: HeaderProps) {
       <OptionsBox>
         {" "}
         {HeaderOptions.map((item, index) => {
-          return <Option key={index}><a>{item}</a></Option>;
+          return <Option key={index}><a href = "#">{item}</a></Option>;
         })}
       </OptionsBox>
 
