@@ -10,7 +10,7 @@ export interface HomeProps {}
 function Home({ }: HomeProps) {
     return <><HomeBanner/>
     <AboutMe/>
-    <Projects/>
+    <Projects />
     <Contact/>
     
     </>;

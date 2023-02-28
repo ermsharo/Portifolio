@@ -4,8 +4,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 
-export const CrawlByIdRequest = (id: String | boolean, search: String) => {
-  const [data, setData] = useState<any>(null);
+export const ProjectRequests = () => {
+  const [data, setData] = useState<any>(false);
   const [error, setError] = useState<boolean | String>(false);
   const [loading, setLoading] = useState<boolean>(false);
 

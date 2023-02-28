@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { ProjectRequests } from "../../services/ProjectsRequests";
+import Loading from "../../UI/atoms/Loading";
 import ProjectsCarrosel from "../../UI/organism/ProjectsCarrosel";
 export interface ProjectsProps {}
 
@@ -30,13 +32,27 @@ const SessionSubtitle = styled.div`
 
 const InfoBox = styled.div``;
 
+function Projects({}: ProjectsProps) {
+  const [data, error, loading] = ProjectRequests();
 
-function Projects({ }: ProjectsProps) {
-    return ( <SessionBox>
+  if (loading) {
+    return <Loading />;
+  }
+
+
+  if (data) {
+    return (
+      <SessionBox>
         <h1>Projects</h1>
+        <ProjectsCarrosel />
+      </SessionBox>
+    );
+  }
 
-      <ProjectsCarrosel/>
-      </SessionBox>);
-};
+  
+    return <div>Error</div>;
+  
+
+}
 
 export default Projects;
