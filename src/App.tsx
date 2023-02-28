@@ -8,6 +8,7 @@ import {
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Header from "./UI/molecules/Header";
+import Footer from "./UI/molecules/Footer";
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
       </Helmet>
       <Header/>
       <RouterProvider router={router} />
+      <Footer/>
       <GlobalStyle />
     </>
   );

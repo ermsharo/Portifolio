@@ -39,7 +39,7 @@ function HomeBanner({}: HomeBannerProps) {
       <HomeBannerBoxElements>
         <InfoBox>
           <SessionTitle>
-            <div>Hi I'm Emilio Haro</div>
+            <div>Hi I'm Emilio Haro 👨‍💻</div>
             <div>Fullstack developer</div>
           </SessionTitle>
           <SessionSubtitle>

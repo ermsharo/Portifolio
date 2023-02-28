@@ -1,9 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 
 export interface FooterProps {}
 
+const FooterBox = styled.div`
+    background-color: black; 
+    width:100%; 
+    padding: 1.5rem; 
+`;
+
 function Footer({ }: FooterProps) {
-    return <>Footer</>;
+    return <FooterBox>Footer</FooterBox>;
 };
 
 export default Footer;
