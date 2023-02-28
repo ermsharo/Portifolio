@@ -84,7 +84,6 @@ export const Button = styled.button`
   height: 3rem;
   margin: auto;
   background-color: ${Colors.regularColor};
-  margin-bottom: 2rem;
   &:hover {
     background-color: ${Colors.hooverColor};
   }

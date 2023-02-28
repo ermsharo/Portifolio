@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../../styles/generalStyles";
 import { Colors } from "./../../../styles/defaultProps";
 export interface HeaderProps {}
 
@@ -10,20 +11,50 @@ export const HeaderBox = styled.div`
   display: flex;
   justify-content: end;
   gap: 2.5rem;
-  padding: 1.5rem;
-  position:fixed; 
-  width: calc(100% - 3rem); 
+
+  position: fixed;
+  width: calc(100% - 2rem);
+  padding: 1rem;
 `;
 
+const ButtonBox = styled.div`
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+
+
+`;
+const OptionsBox = styled.div`
+width:100%;
+display: flex;
+  justify-content: end;
+  gap: 2.5rem;
+`;
+
+
+const Option = styled.div`
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+
+`;
 const HeaderOptions = ["Home", "About", "Projects", "Contact"];
 
 function Header({}: HeaderProps) {
   return (
     <HeaderBox>
-      {HeaderOptions.map((item, index) => {
-        return <div key={index}>{item}</div>;
-      })}
-      <button>Download CV</button>
+      <OptionsBox>
+        {" "}
+        {HeaderOptions.map((item, index) => {
+          return <Option key={index}>{item}</Option>;
+        })}
+      </OptionsBox>
+
+      <ButtonBox>
+
+        <Button>Download CV</Button>
+      </ButtonBox>
     </HeaderBox>
   );
 }
