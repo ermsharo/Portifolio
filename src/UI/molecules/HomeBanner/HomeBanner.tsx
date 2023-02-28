@@ -7,11 +7,10 @@ export interface HomeBannerProps {}
 const HomeBannerBoxElements = styled.div`
   display: grid;
   grid-template-columns: 60% 40%;
-
 `;
 
 const HomeBannerBox = styled.div`
-padding: 2rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -34,7 +33,7 @@ const InfoBox = styled.div``;
 
 const BannerImage = styled.div``;
 
-function HomeBanner({}: HomeBannerProps) {
+function HomeBanner() {
   return (
     <HomeBannerBox>
       <HomeBannerBoxElements>
@@ -44,12 +43,17 @@ function HomeBanner({}: HomeBannerProps) {
             <div>Fullstack developer</div>
           </SessionTitle>
           <SessionSubtitle>
-            Desenvolvedor web, com experiência em desenvolvimento em aplicações
-            de mensageria, produtos de logística, internet das coisas e em
-            soluções tecnológicas para o setor de jornalismo.
+            <p>
+              {" "}
+              Desenvolvedor web, com experiência em desenvolvimento em
+              aplicações de mensageria, produtos de logística, internet das
+              coisas e em soluções tecnológicas para o setor de jornalismo.
+            </p>
           </SessionSubtitle>
         </InfoBox>
-        <BannerImage><HomeLogo/></BannerImage>
+        <BannerImage>
+          <HomeLogo />
+        </BannerImage>
       </HomeBannerBoxElements>
     </HomeBannerBox>
   );

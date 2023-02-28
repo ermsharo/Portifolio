@@ -18,7 +18,7 @@ background: linear-gradient(328deg, rgba(2,0,36,1) 0%, rgba(32,32,103,1) 29%, rg
     font-family: ${Fonts.primaryFont}   
 
     font-size:2.5rem;
-    padding:1.5rem;
+ 
   }
   h2 {
     font-size:2.2rem;
@@ -31,6 +31,10 @@ background: linear-gradient(328deg, rgba(2,0,36,1) 0%, rgba(32,32,103,1) 29%, rg
       font-size:1.5rem;
 
     padding:1rem;
+  }
+
+  p{
+    font-family: ${Fonts.secondaryFont};
   }
 
   a {
