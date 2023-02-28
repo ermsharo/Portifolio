@@ -5,7 +5,7 @@ export interface FooterProps {}
 
 const FooterBox = styled.div`
     background-color: black; 
-    width:100%; 
+    width:auto; 
     padding: 1.5rem; 
 `;
 
