@@ -6,4 +6,4 @@ function DefaultBoard({ }: DefaultBoardProps) {
     return <>DefaultBoard</>;
 };
 
-export default DefaultBoard;
+export default DefaultBoard; 
