@@ -7,8 +7,7 @@ const HomeBannerBoxElements = styled.div`
   display: grid;
   grid-template-columns: 60% 40%;
 
-  border: 2px solid green;
-  height: 75%;
+  height: 65%;
 `;
 
 const HomeBannerBox = styled.div`
@@ -16,6 +15,8 @@ const HomeBannerBox = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  width: 85%;
+  margin: auto;
 `;
 
 const SessionTitle = styled.div`
@@ -28,13 +29,9 @@ const SessionSubtitle = styled.div`
   padding: 2rem;
 `;
 
-const InfoBox = styled.div`
-  border: 2px solid red;
-`;
+const InfoBox = styled.div``;
 
-const BannerImage = styled.div`
-  border: 2px solid red;
-`;
+const BannerImage = styled.div``;
 
 function HomeBanner({}: HomeBannerProps) {
   return (
