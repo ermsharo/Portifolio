@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
       font-family: ${Fonts.secondaryFont};
       border:0;
       margin:0;
+      background: rgb(2,0,36);
+background: linear-gradient(328deg, rgba(2,0,36,1) 0%, rgba(32,32,103,1) 29%, rgba(0,212,255,1) 100%);
    }
    h1 {
     font-family: ${Fonts.primaryFont}   
