@@ -31,6 +31,24 @@ const GlobalStyle = createGlobalStyle`
     padding:1rem;
   }
 
+  a {
+    border-bottom: 0.05em solid #b4e7f8;
+    box-shadow: inset 0 -0.05em 0 #b4e7f8;
+    color: inherit;
+    transition: background-color 0.25s cubic-bezier(0.33, 0.66, 0.66, 1);
+    text-decoration: none;
+
+    :hover {
+      background-color: #b4e7f8;
+    }
+    :focus {
+      background-color: #b4e7f8;
+    }
+    :active {
+      background-color: #b4e7f8;
+    }
+  }
+
   }
 
 `;

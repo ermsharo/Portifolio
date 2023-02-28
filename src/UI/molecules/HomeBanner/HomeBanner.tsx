@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import HomeLogo from "../../atoms/HomeLogo";
 import { Colors } from "./../../../styles/defaultProps";
 
 export interface HomeBannerProps {}
@@ -48,7 +49,7 @@ function HomeBanner({}: HomeBannerProps) {
             soluções tecnológicas para o setor de jornalismo.
           </SessionSubtitle>
         </InfoBox>
-        <BannerImage></BannerImage>
+        <BannerImage><HomeLogo/></BannerImage>
       </HomeBannerBoxElements>
     </HomeBannerBox>
   );
