@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ProjectRequests } from "../../services/ProjectsRequests";
-import Loading from "../../UI/atoms/Loading";
-import Header from "../../UI/molecules/Header";
-import ProjectsCarrosel from "../../UI/organism/ProjectsCarrosel";
+import ProjectsCarrosel from "../../organism/ProjectsCarrosel";
+
 export interface ProjectsProps {}
 
 const HomeBannerBoxElements = styled.div`
@@ -34,17 +32,19 @@ const SessionSubtitle = styled.div`
 
 const InfoBox = styled.div``;
 
-function Projects() {
+function ProjectsSession() {
   return (
-    <>
-      <Header />
-      <SessionBox>
-        <h1>Projects</h1>
-        Projetos aqui
-        <div>Projetos aqui</div>
-      </SessionBox>
-    </>
+    <SessionBox>
+      <h1>Projects</h1>
+      <ProjectsCarrosel />
+
+    <div>
+    <Link to={{ pathname : "/projects" }}>   sdasd todos os projetos</Link>
+   
+      
+      </div>
+    </SessionBox>
   );
 }
 
-export default Projects;
+export default ProjectsSession;

@@ -1,29 +1,25 @@
 import GlobalStyle from "./styles/globalStyles";
 import { Helmet } from "react-helmet";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Header from "./UI/molecules/Header";
 import Footer from "./UI/molecules/Footer";
+import Projects from "./pages/Projects";
 
 function App() {
-  
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Home />,
       errorElement: <ErrorPage />,
     },
-    // {
-    //   path: "contacts/:contactId",
-    //   element: <Contact />,
-    // },
+     {
+   path: "/projects",
+       element: <Projects />,
+     },
   ]);
-
 
   return (
     <>
@@ -38,7 +34,7 @@ function App() {
       </Helmet>
 
       <RouterProvider router={router} />
-      <Footer/>
+      <Footer />
       <GlobalStyle />
     </>
   );

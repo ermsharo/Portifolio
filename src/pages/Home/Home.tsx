@@ -5,18 +5,16 @@ import AboutMe from "../AboutMe";
 import Contact from "../Contact";
 import Projects from "../Projects";
 import { HashScroll } from "react-hash-scroll";
+import ProjectsSession from "../../UI/molecules/ProjectsSession";
 export interface HomeProps {}
 
 function Home({}: HomeProps) {
-
-
   return (
     <>
       <Header />
 
       <HashScroll hash="banner_home" behavior="smooth" position="start">
         <div>
-          {" "}
           <HomeBanner />
         </div>
       </HashScroll>
@@ -29,13 +27,12 @@ function Home({}: HomeProps) {
 
       <HashScroll hash="projects_home" behavior="smooth" position="start">
         <div>
-          <Projects />
+          <ProjectsSession />
         </div>
       </HashScroll>
 
       <HashScroll hash="contact_home" behavior="smooth" position="start">
         <div>
-          {" "}
           <Contact />
         </div>
       </HashScroll>

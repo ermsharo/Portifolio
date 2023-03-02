@@ -42,7 +42,6 @@ const HeaderOptionObj = (name: string, hash: string) => {
   return { name: name, to: `#${hash}` };
 };
 
-
 // const [homeSections, setHomeSections] = useState([
 
 //   'banner_home',
@@ -65,7 +64,7 @@ function Header({}: HeaderProps) {
         {HeaderOptions.map((item, index) => {
           return (
             <Option key={index}>
-              <Link  to={{ hash: `${item.to}` }}>{item.name}</Link>
+              <Link to={{  pathname : "/" ,hash: `${item.to}` }}>{item.name}</Link>
             </Option>
           );
         })}
