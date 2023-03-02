@@ -17,9 +17,10 @@ export interface ProjectCardProps {
   projectSmallDescription: string;
   projectProdLink?: string;
   projectRepoLink?: string;
+  projectSlug: string;
   title: string;
   description: string;
-  slug: string;
+
 }
 
 const findValueByKey: any = (obj: object, keyToFind: String) => {
@@ -58,7 +59,7 @@ function ProjectsCarrosel({}: ProjectsCarroselProps) {
             projectRepoLink={item.projectRepoLink}
             title={item.title}
             description={item.description}
-            slug={item.slug}
+            slug={item.projectSlug}
           />
         );
       })}

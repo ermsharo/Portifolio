@@ -8,6 +8,11 @@ import Header from "./UI/molecules/Header";
 import Footer from "./UI/molecules/Footer";
 import Projects from "./pages/Projects";
 import Project from "./pages/Project";
+import styled from "styled-components";
+
+const ProjectPage = styled.div`
+  min-height: calc(100vh - 4rem);
+`;
 
 function App() {
   const router = createBrowserRouter([
@@ -37,8 +42,11 @@ function App() {
           href="https://i.stack.imgur.com/bJ120.png"
         />
       </Helmet>
+      <ProjectPage>
+        {" "}
+        <RouterProvider router={router} />
+      </ProjectPage>
 
-      <RouterProvider router={router} />
       <Footer />
       <GlobalStyle />
     </>

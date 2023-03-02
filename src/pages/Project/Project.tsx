@@ -4,6 +4,8 @@ import { ProjectRequests } from "../../services/ProjectsRequests";
 import Loading from "../../UI/atoms/Loading";
 import Header from "../../UI/molecules/Header";
 import ProjectCard from "../../UI/molecules/ProjectCard";
+import parse from "html-react-parser";
+
 export interface ProjectsProps {}
 
 const ProjectsBox = styled.div`
@@ -22,6 +24,7 @@ const SessionBox = styled.div`
 
   width: 85%;
   margin: auto;
+  min-height: (100vh - 3rem);
 `;
 
 const PageTitleInfo = styled.div`
@@ -29,8 +32,6 @@ const PageTitleInfo = styled.div`
   width: 85%;
   margin: auto;
 `;
-
-
 
 function Project() {
   let { slug } = useParams();
@@ -41,32 +42,37 @@ function Project() {
     return <Loading />;
   }
   if (error) {
-    return <div></div>;
+    return <div>Error</div>;
   }
 
+  if (data) {
+    let project = data.filter(
+      (data: { projectSlug: string }) => data.projectSlug === slug
+    );
 
+    const renderObj = (value: string) => {
+      if (value) return parse(value);
+    };
 
+    return (
+      <>
+        <Header />
+        <PageTitleInfo>
+          <h1>Project</h1>
+        </PageTitleInfo>
 
+        <SessionBox>
+          <div>{renderObj(project[0]?.title)}</div>
+          <div>{renderObj(project[0]?.description)}</div>
+          <a>{renderObj(project[0]?.projectProdLink)}</a>
+          <a>{renderObj(project[0]?.projectRepoLink)}</a>
+          <div>{renderObj(project[0]?.tags)}</div>
+        </SessionBox>
+      </>
+    );
+  }
 
-
-  //Project 
-
-  const project = data.filter((data: { slug: string; }) => {
-    return data.slug = "aaa";
-  });
-
-console.log("Filter char",project )
-console.log("Project", Project)
-console.log("Data", data)
-  return (
-    <>
-      <Header />
-      <PageTitleInfo>
-        <h1>Project</h1>
-      </PageTitleInfo>
-      <SessionBox>{slug}</SessionBox>
-    </>
-  );
+  return <></>;
 }
 
 export default Project;
