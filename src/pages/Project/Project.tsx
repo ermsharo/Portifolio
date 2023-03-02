@@ -8,13 +8,9 @@ import parse from "html-react-parser";
 
 export interface ProjectsProps {}
 
-const ProjectsBox = styled.div`
+const ProjectSesionBox = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 6rem;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const SessionBox = styled.div`
@@ -28,9 +24,8 @@ const SessionBox = styled.div`
 `;
 
 const PageTitleInfo = styled.div`
-  padding-top: 6rem;
-  width: 85%;
-  margin: auto;
+  padding-top: 8rem;
+
 `;
 
 function Project() {
@@ -57,16 +52,20 @@ function Project() {
     return (
       <>
         <Header />
-        <PageTitleInfo>
-          <h1>Project</h1>
-        </PageTitleInfo>
 
         <SessionBox>
-          <div>{renderObj(project[0]?.title)}</div>
-          <div>{renderObj(project[0]?.description)}</div>
-          <a>{renderObj(project[0]?.projectProdLink)}</a>
-          <a>{renderObj(project[0]?.projectRepoLink)}</a>
-          <div>{renderObj(project[0]?.tags)}</div>
+          <ProjectSesionBox>
+            <div></div>
+            <div>
+              <PageTitleInfo>
+                <h1>{renderObj(project[0]?.title)}</h1>
+              </PageTitleInfo>
+              <div>{renderObj(project[0]?.description)}</div>
+              <a>{renderObj(project[0]?.projectProdLink)}</a>
+              <a>{renderObj(project[0]?.projectRepoLink)}</a>
+              <div>{renderObj(project[0]?.tags)}</div>
+            </div>
+          </ProjectSesionBox>
         </SessionBox>
       </>
     );
