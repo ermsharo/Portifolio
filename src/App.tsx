@@ -15,10 +15,10 @@ function App() {
       element: <Home />,
       errorElement: <ErrorPage />,
     },
-     {
-   path: "/projects",
-       element: <Projects />,
-     },
+    {
+      path: "/projects",
+      element: <Projects />,
+    },
   ]);
 
   return (

@@ -38,10 +38,8 @@ function ProjectsSession() {
       <h1>Projects</h1>
       <ProjectsCarrosel />
 
-    <div>
-    <Link to={{ pathname : "/projects" }}>   sdasd todos os projetos</Link>
-   
-      
+      <div>
+        <Link to={{ pathname: "/projects" }}> sdasd todos os projetos</Link>
       </div>
     </SessionBox>
   );

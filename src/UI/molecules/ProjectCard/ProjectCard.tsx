@@ -47,7 +47,9 @@ function ProjectCard({
       </ProjectCardImage>
       <ProjectCardInfo>
         <ProjectCardTitle>{title}</ProjectCardTitle>
-        <ProjectCardDescription>{projectSmallDescription}</ProjectCardDescription>
+        <ProjectCardDescription>
+          {projectSmallDescription}
+        </ProjectCardDescription>
         <ProjectCardTags>{tags}</ProjectCardTags>
       </ProjectCardInfo>
     </Box>

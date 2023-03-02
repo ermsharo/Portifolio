@@ -11,7 +11,7 @@ export const Box = styled.div`
   white-space: wrap;
 
   text-overflow: ellipsis;
-  height: 100%;
+
   background-color: ${Colors.secondBackround};
 `;
 
