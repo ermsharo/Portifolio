@@ -12,6 +12,16 @@ const ProjectsBox = styled.div`
   gap: 2rem;
 `;
 
+export interface ProjectCardProps {
+  tags?: string[];
+  projectSmallDescription: string;
+  projectProdLink?: string;
+  projectRepoLink?: string;
+  title: string;
+  description: string;
+  slug: string;
+}
+
 const findValueByKey: any = (obj: object, keyToFind: String) => {
   return (
     Object.entries(obj).reduce(
@@ -39,29 +49,16 @@ function ProjectsCarrosel({}: ProjectsCarroselProps) {
 
   return (
     <ProjectsBox>
-      {data.map((item: object, index: number) => {
-        const tags = findValueByKey(item, "tags");
-        const projectSmallDescription = findValueByKey(
-          item,
-          "small_description"
-        );
-        let projectProdLink = findValueByKey(item, "productionlink");
-        let projectRepoLink = findValueByKey(item, "productionlink");
-        const title = findValueByKey(findValueByKey(item, "title"), "rendered");
-        let projectSlug = findValueByKey(item, "slug");
-        const description = findValueByKey(
-          findValueByKey(item, "content"),
-          "rendered"
-        );
+      {data.map((item: ProjectCardProps) => {
         return (
           <ProjectCard
-            tags={tags}
-            projectSmallDescription={projectSmallDescription}
-            projectProdLink={projectProdLink}
-            projectRepoLink={projectRepoLink}
-            title={title}
-            description={description}
-            slug ={projectSlug}
+            tags={item.tags}
+            projectSmallDescription={item.projectSmallDescription}
+            projectProdLink={item.projectProdLink}
+            projectRepoLink={item.projectRepoLink}
+            title={item.title}
+            description={item.description}
+            slug={item.slug}
           />
         );
       })}

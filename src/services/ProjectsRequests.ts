@@ -3,6 +3,47 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const findValueByKey: any = (obj: object, keyToFind: String) => {
+  return (
+    Object.entries(obj).reduce(
+      (acc, [key, value]) =>
+        key === keyToFind
+          ? acc.concat(value)
+          : typeof value === "object" && value
+          ? acc.concat(findValueByKey(value, keyToFind))
+          : acc,
+      []
+    )[0] || []
+  );
+};
+
+const formatData = (data: any) => {
+  return data.map((item: object) => {
+    // const tags = findValueByKey(item, "tags");
+    // const projectSmallDescription = findValueByKey(item, "small_description");
+    // let projectProdLink = findValueByKey(item, "productionlink");
+    // let projectRepoLink = findValueByKey(item, "productionlink");
+    // let projectSlug = findValueByKey(item, "slug");
+    // const title = findValueByKey(findValueByKey(item, "title"), "rendered");
+    // const description = findValueByKey(
+    //   findValueByKey(item, "content"),
+    //   "rendered"
+    // );
+    return {
+      title: findValueByKey(findValueByKey(item, "title"), "rendered"),
+      description: findValueByKey(
+        findValueByKey(item, "content"),
+        "rendered"
+      ),
+      projectSlug: findValueByKey(item, "slug"),
+      projectRepoLink: findValueByKey(item, "productionlink"),
+      projectProdLink: findValueByKey(item, "productionlink"),
+      projectSmallDescription:findValueByKey(item, "small_description"),
+      tags:findValueByKey(item, "tags")
+    };
+  });
+};
+
 export const ProjectRequests = () => {
   const [data, setData] = useState<any>([]);
   const [error, setError] = useState<boolean | String>(false);
@@ -16,7 +57,7 @@ export const ProjectRequests = () => {
         `http://portfolio.local/wp-json/wp/v2/posts`
       );
 
-      setData(response.data);
+      setData(formatData(response.data));
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error("Axios Error with Message: " + error.message);

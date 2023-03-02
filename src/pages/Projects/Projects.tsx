@@ -6,7 +6,6 @@ import Header from "../../UI/molecules/Header";
 import ProjectCard from "../../UI/molecules/ProjectCard";
 export interface ProjectsProps {}
 
-
 const ProjectsBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -31,22 +30,16 @@ const PageTitleInfo = styled.div`
   margin: auto;
 `;
 
-
-
-
-const findValueByKey: any = (obj: object, keyToFind: String) => {
-  return (
-    Object.entries(obj).reduce(
-      (acc, [key, value]) =>
-        key === keyToFind
-          ? acc.concat(value)
-          : typeof value === "object" && value
-          ? acc.concat(findValueByKey(value, keyToFind))
-          : acc,
-      []
-    )[0] || []
-  );
-};
+export interface HeaderProps {
+  tags: string[];
+  projectSmallDescription: string;
+  projectProdLink: string;
+  projectRepoLink: string;
+  title: string;
+  description: string;
+  slug: string;
+  projectSlug: string;
+}
 
 function Projects() {
   const [data, error, loading] = ProjectRequests();
@@ -67,32 +60,18 @@ function Projects() {
       </PageTitleInfo>
       <SessionBox>
         <ProjectsBox>
-          {data.map((item: object) => {
-            const tags = findValueByKey(item, "tags");
-            const projectSmallDescription = findValueByKey(
-              item,
-              "small_description"
-            );
-            let projectProdLink = findValueByKey(item, "productionlink");
-            let projectRepoLink = findValueByKey(item, "productionlink");
-            let projectSlug = findValueByKey(item, "slug");
-            const title = findValueByKey(
-              findValueByKey(item, "title"),
-              "rendered"
-            );
-            const description = findValueByKey(
-              findValueByKey(item, "content"),
-              "rendered"
-            );
+          {data.map((item: HeaderProps) => {
+
+              console.log("Item: " + item)
             return (
               <ProjectCard
-                tags={tags}
-                projectSmallDescription={projectSmallDescription}
-                projectProdLink={projectProdLink}
-                projectRepoLink={projectRepoLink}
-                title={title}
-                description={description}
-                slug ={projectSlug}
+                tags={item.tags}
+                projectSmallDescription={item.projectSmallDescription}
+                projectProdLink={item.projectProdLink}
+                projectRepoLink={item.projectRepoLink}
+                title={item.title}
+                description={item.description}
+                slug={item.projectSlug}
               />
             );
           })}

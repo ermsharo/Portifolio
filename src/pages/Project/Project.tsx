@@ -30,22 +30,10 @@ const PageTitleInfo = styled.div`
   margin: auto;
 `;
 
-const findValueByKey: any = (obj: object, keyToFind: String) => {
-  return (
-    Object.entries(obj).reduce(
-      (acc, [key, value]) =>
-        key === keyToFind
-          ? acc.concat(value)
-          : typeof value === "object" && value
-          ? acc.concat(findValueByKey(value, keyToFind))
-          : acc,
-      []
-    )[0] || []
-  );
-};
+
 
 function Project() {
-  let { project_id } = useParams();
+  let { slug } = useParams();
 
   const [data, error, loading] = ProjectRequests();
 
@@ -56,13 +44,27 @@ function Project() {
     return <div></div>;
   }
 
+
+
+
+
+
+  //Project 
+
+  const project = data.filter((data: { slug: string; }) => {
+    return data.slug = "aaa";
+  });
+
+console.log("Filter char",project )
+console.log("Project", Project)
+console.log("Data", data)
   return (
     <>
       <Header />
       <PageTitleInfo>
-        <h1>Projects</h1>
+        <h1>Project</h1>
       </PageTitleInfo>
-      <SessionBox>{project_id}</SessionBox>
+      <SessionBox>{slug}</SessionBox>
     </>
   );
 }

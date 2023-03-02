@@ -21,7 +21,7 @@ function App() {
       element: <Projects />,
     },
     {
-      path: "/project",
+      path: "/project/:slug",
       element: <Project />,
     },
   ]);
