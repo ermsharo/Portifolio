@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage";
 import Header from "./UI/molecules/Header";
 import Footer from "./UI/molecules/Footer";
 import Projects from "./pages/Projects";
+import Project from "./pages/Project";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
     {
       path: "/projects",
       element: <Projects />,
+    },
+    {
+      path: "/project",
+      element: <Project />,
     },
   ]);
 

@@ -75,6 +75,7 @@ function Projects() {
             );
             let projectProdLink = findValueByKey(item, "productionlink");
             let projectRepoLink = findValueByKey(item, "productionlink");
+            let projectSlug = findValueByKey(item, "slug");
             const title = findValueByKey(
               findValueByKey(item, "title"),
               "rendered"
@@ -91,6 +92,7 @@ function Projects() {
                 projectRepoLink={projectRepoLink}
                 title={title}
                 description={description}
+                slug ={projectSlug}
               />
             );
           })}

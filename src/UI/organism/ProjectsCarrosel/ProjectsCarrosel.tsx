@@ -48,6 +48,7 @@ function ProjectsCarrosel({}: ProjectsCarroselProps) {
         let projectProdLink = findValueByKey(item, "productionlink");
         let projectRepoLink = findValueByKey(item, "productionlink");
         const title = findValueByKey(findValueByKey(item, "title"), "rendered");
+        let projectSlug = findValueByKey(item, "slug");
         const description = findValueByKey(
           findValueByKey(item, "content"),
           "rendered"
@@ -60,6 +61,7 @@ function ProjectsCarrosel({}: ProjectsCarroselProps) {
             projectRepoLink={projectRepoLink}
             title={title}
             description={description}
+            slug ={projectSlug}
           />
         );
       })}
