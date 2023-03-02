@@ -36,7 +36,7 @@ function App() {
           href="https://i.stack.imgur.com/bJ120.png"
         />
       </Helmet>
-      <Header/>
+
       <RouterProvider router={router} />
       <Footer/>
       <GlobalStyle />

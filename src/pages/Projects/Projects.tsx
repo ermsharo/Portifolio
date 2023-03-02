@@ -32,27 +32,13 @@ const SessionSubtitle = styled.div`
 
 const InfoBox = styled.div``;
 
-function Projects({}: ProjectsProps) {
-  const [data, error, loading] = ProjectRequests();
-
-  if (loading) {
-    return <Loading />;
-  }
-
-
-  if (data) {
-    return (
-      <SessionBox>
-        <h1>Projects</h1>
-        <ProjectsCarrosel />
-      </SessionBox>
-    );
-  }
-
-  
-    return <div>Error</div>;
-  
-
+function Projects() {
+  return (
+    <SessionBox>
+      <h1>Projects</h1>
+      <ProjectsCarrosel />
+    </SessionBox>
+  );
 }
 
 export default Projects;

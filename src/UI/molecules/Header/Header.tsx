@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Button } from "../../../styles/generalStyles";
 import { Colors } from "./../../../styles/defaultProps";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 export interface HeaderProps {}
 
 export const HeaderBox = styled.div`
@@ -21,38 +23,55 @@ const ButtonBox = styled.div`
   display: flex;
   align-items: center;
   white-space: nowrap;
-
-
 `;
 const OptionsBox = styled.div`
-width:100%;
-display: flex;
+  width: 100%;
+  display: flex;
   justify-content: end;
   gap: 2.5rem;
 `;
 
-
 const Option = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-justify-content: center;
-
+  justify-content: center;
 `;
-const HeaderOptions = ["Home", "About", "Projects", "Contact"];
+
+const HeaderOptionObj = (name: string, hash: string) => {
+  return { name: name, to: `#${hash}` };
+};
+
+
+// const [homeSections, setHomeSections] = useState([
+
+//   'banner_home',
+//   'about_me_home',
+//   'projects_home',
+//   'contact_home'
+// ]);
+
+const HeaderOptions = [
+  HeaderOptionObj("Home", "banner_home"),
+  HeaderOptionObj("About", "about_me_home"),
+  HeaderOptionObj("Projects", "projects_home"),
+  HeaderOptionObj("Contact", "contact_home"),
+];
 
 function Header({}: HeaderProps) {
   return (
     <HeaderBox>
       <OptionsBox>
-        {" "}
         {HeaderOptions.map((item, index) => {
-          return <Option key={index}><a href = "#">{item}</a></Option>;
+          return (
+            <Option key={index}>
+              <Link  to={{ hash: `${item.to}` }}>{item.name}</Link>
+            </Option>
+          );
         })}
       </OptionsBox>
 
       <ButtonBox>
-
         <Button>Download CV</Button>
       </ButtonBox>
     </HeaderBox>

@@ -3,9 +3,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 export const ProjectRequests = () => {
-  const [data, setData] = useState<any>(false);
+  const [data, setData] = useState<any>([]);
   const [error, setError] = useState<boolean | String>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -16,6 +15,7 @@ export const ProjectRequests = () => {
       const response = await axios.get<any>(
         `http://portfolio.local/wp-json/wp/v2/posts`
       );
+
       setData(response.data);
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -29,11 +29,10 @@ export const ProjectRequests = () => {
   };
 
   useEffect(() => {
-
     fetchData();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return [data, error, loading] as const;
 };
-

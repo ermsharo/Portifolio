@@ -44,7 +44,6 @@ function HomeBanner() {
           </SessionTitle>
           <SessionSubtitle>
             <p>
-              {" "}
               Desenvolvedor web, com experiência em desenvolvimento em
               aplicações de mensageria, produtos de logística, internet das
               coisas e em soluções tecnológicas para o setor de jornalismo.
