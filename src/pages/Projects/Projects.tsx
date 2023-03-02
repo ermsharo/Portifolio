@@ -4,15 +4,8 @@ import { ProjectRequests } from "../../services/ProjectsRequests";
 import Loading from "../../UI/atoms/Loading";
 import Header from "../../UI/molecules/Header";
 import ProjectCard from "../../UI/molecules/ProjectCard";
-import ProjectsCarrosel from "../../UI/organism/ProjectsCarrosel";
 export interface ProjectsProps {}
 
-const HomeBannerBoxElements = styled.div`
-  display: grid;
-  grid-template-columns: 60% 40%;
-
-  height: 65%;
-`;
 
 const ProjectsBox = styled.div`
   display: grid;
@@ -32,17 +25,14 @@ const SessionBox = styled.div`
   margin: auto;
 `;
 
-const SessionTitle = styled.div`
-  font-size: 3.5rem;
-  padding: 1.5rem;
+const PageTitleInfo = styled.div`
+  padding-top: 6rem;
+  width: 85%;
+  margin: auto;
 `;
 
-const SessionSubtitle = styled.div`
-  font-size: 1.5rem;
-  padding: 2rem;
-`;
 
-const InfoBox = styled.div``;
+
 
 const findValueByKey: any = (obj: object, keyToFind: String) => {
   return (
@@ -71,41 +61,40 @@ function Projects() {
   return (
     <>
       <Header />
-      <SessionBox>
+      <PageTitleInfo>
+        {" "}
         <h1>Projects</h1>
-        Projetos aqui
-        <div>
-          {" "}
-          <ProjectsBox>
-            {data.map((item: object, index: number) => {
-              const tags = findValueByKey(item, "tags");
-              const projectSmallDescription = findValueByKey(
-                item,
-                "small_description"
-              );
-              let projectProdLink = findValueByKey(item, "productionlink");
-              let projectRepoLink = findValueByKey(item, "productionlink");
-              const title = findValueByKey(
-                findValueByKey(item, "title"),
-                "rendered"
-              );
-              const description = findValueByKey(
-                findValueByKey(item, "content"),
-                "rendered"
-              );
-              return (
-                <ProjectCard
-                  tags={tags}
-                  projectSmallDescription={projectSmallDescription}
-                  projectProdLink={projectProdLink}
-                  projectRepoLink={projectRepoLink}
-                  title={title}
-                  description={description}
-                />
-              );
-            })}
-          </ProjectsBox>
-        </div>
+      </PageTitleInfo>
+      <SessionBox>
+        <ProjectsBox>
+          {data.map((item: object) => {
+            const tags = findValueByKey(item, "tags");
+            const projectSmallDescription = findValueByKey(
+              item,
+              "small_description"
+            );
+            let projectProdLink = findValueByKey(item, "productionlink");
+            let projectRepoLink = findValueByKey(item, "productionlink");
+            const title = findValueByKey(
+              findValueByKey(item, "title"),
+              "rendered"
+            );
+            const description = findValueByKey(
+              findValueByKey(item, "content"),
+              "rendered"
+            );
+            return (
+              <ProjectCard
+                tags={tags}
+                projectSmallDescription={projectSmallDescription}
+                projectProdLink={projectProdLink}
+                projectRepoLink={projectRepoLink}
+                title={title}
+                description={description}
+              />
+            );
+          })}
+        </ProjectsBox>
       </SessionBox>
     </>
   );
