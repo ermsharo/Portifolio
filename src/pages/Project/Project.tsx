@@ -25,7 +25,15 @@ const SessionBox = styled.div`
 
 const PageTitleInfo = styled.div`
   padding-top: 8rem;
+`;
 
+const ProjectCover = styled.div`
+  padding: 2rem;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  margin-top: 6rem;
 `;
 
 function Project() {
@@ -55,7 +63,9 @@ function Project() {
 
         <SessionBox>
           <ProjectSesionBox>
-            <div></div>
+            <ProjectCover>
+              <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.publicdomainpictures.net%2Fpictures%2F40000%2Fvelka%2Fhappy-dog.jpg&f=1&nofb=1&ipt=084b8eed8486ce8fc2e2731be2fcd5abe698c8a6336de5f7fdf759bd57570f32&ipo=images"></img>
+            </ProjectCover>
             <div>
               <PageTitleInfo>
                 <h1>{renderObj(project[0]?.title)}</h1>
