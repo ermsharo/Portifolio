@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ContactForm from "../../UI/organism/ContactForm";
 
 export interface ContactProps {}
 
@@ -15,7 +16,7 @@ const SessionBox = styled.div`
 function Contact({ }: ContactProps) {
     return ( <SessionBox>
         <h1>Contact</h1>
-
+        <ContactForm />
 
       </SessionBox>);
 };

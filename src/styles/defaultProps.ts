@@ -17,6 +17,6 @@ export const Colors = {
 };
 
 export const Fonts = {
-  primaryFont: 'JetBrains Mono',
-  secondaryFont: 'Patua One',
+  primaryFont: "JetBrains Mono",
+  secondaryFont: "Patua One",
 };
