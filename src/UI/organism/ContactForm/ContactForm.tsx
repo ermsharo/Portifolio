@@ -1,80 +1,79 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { send } from "emailjs-com";
-import { MAIL_TEAMPLATE_ID, MAIL_SERVICE_ID ,USER_ID} from "./../../../env";
+import { MAIL_TEAMPLATE_ID, MAIL_SERVICE_ID, USER_ID } from "./../../../env";
 import styled from "styled-components";
+import { Button, Input, TextArea } from "../../../styles/generalStyles";
+import ErrorAlert from "../../atoms/ErrorAlert";
 
 export interface ContactFormProps {}
 
-export const ButtonBox = styled.button`
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  background-color: darkblue;
-  color: white;
-  width: calc(100%);
-  height: 3rem;
-  margin: auto;
+const isMailValid = (email: string) => {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+};
 
-  margin-bottom: 2rem;
-  &:hover {
-
+const verifyForms = (name: string, email: string, message: string) => {
+  let formErrors = [];
+  if (name.length === 0) {
+    formErrors.push("Please enter a name");
   }
-`;
-
-
-export const Input = styled.input`
-
-  font-size: 1.2rem;
-  border-radius: 0.2rem;
-  border: 0;
-  box-sizing: border-box;
-  width: calc(100%);
-  margin-top: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &::placeholder {
-
+  if (email.length === 0) {
+    formErrors.push("Please enter a email");
   }
-  &:focus{
-
-    outline-style: dashed;
+  if (!isMailValid(email)) {
+    formErrors.push("Please enter a valid email");
   }
-`;
+  if (message.length === 0) {
+    formErrors.push("Please enter a message");
+  }
 
+  return formErrors;
+};
 
 function ContactForm({}: ContactFormProps) {
-  const [sendError, setSendError] = useState<boolean>(false);
+  const [formErrors , setFormErrors] = useState<string[]>([]);
+
+  const [messageText, setMessageText] = useState<string>("");
 
   const [toSend, setToSend] = useState({
     from_name: "",
-    to_name: 'Emilio',
-    message: "",
+    to_name: "Emilio Haro",
     reply_to: "",
   });
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    send(MAIL_SERVICE_ID, MAIL_TEAMPLATE_ID, toSend, USER_ID)
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        setSendError(false);
-      })
-      .catch((err) => {
-        console.log("FAILED...", err);
-        setSendError(true);
-      });
+
+    let verifiedForms = verifyForms(
+      toSend.from_name,
+      toSend.reply_to,
+      messageText
+    );
+
+    if (verifiedForms.length === 0) {
+      // send(MAIL_SERVICE_ID, MAIL_TEAMPLATE_ID, toSend, USER_ID)
+      //   .then((response) => {
+      //     console.log("SUCCESS!", response.status, response.text);
+      //     setSendError(false);
+      //   })
+      //   .catch((err) => {
+      //     console.log("FAILED...", err);
+      //     setSendError(true);
+      //   });
+    } else {
+      setFormErrors(verifiedForms);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormErrors([])
     setToSend({ ...toSend, [e.target.name]: e.target.value });
     console.log(toSend);
+  };
+
+  const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setFormErrors([])
+    setMessageText(e.target.value);
   };
 
   return (
@@ -83,15 +82,8 @@ function ContactForm({}: ContactFormProps) {
         <Input
           type="text"
           name="from_name"
-          placeholder="from name"
+          placeholder="Your name"
           value={toSend.from_name}
-          onChange={handleChange}
-        />
-        <Input
-          type="text"
-          name="message"
-          placeholder="Your message"
-          value={toSend.message}
           onChange={handleChange}
         />
         <Input
@@ -101,9 +93,20 @@ function ContactForm({}: ContactFormProps) {
           value={toSend.reply_to}
           onChange={handleChange}
         />
-        <ButtonBox type="submit">Submit</ButtonBox>
+
+        <TextArea
+          name="message"
+          placeholder="Your message"
+          value={messageText}
+          rows={10}
+          cols={80}
+          onChange={handleChangeTextArea}
+        />
+        <Button style={{ backgroundColor: "#041c2d" }} type="submit">
+          Submit
+        </Button>
       </form>
-      {sendError && <> Erro ao enviar</>}
+      <ErrorAlert errors={formErrors} />
     </div>
   );
 }

@@ -1,11 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export interface ButtonProps {
-
-    children: string | JSX.Element | JSX.Element[];
-
-
+  children: string | JSX.Element | JSX.Element[];
 }
 
 export const ButtonBox = styled.button`
@@ -26,13 +23,11 @@ export const ButtonBox = styled.button`
 
   margin-bottom: 2rem;
   &:hover {
-
   }
 `;
 
-
-function Button({ }: ButtonProps) {
-    return <ButtonBox>Button</ButtonBox>;
-};
+function Button({}: ButtonProps) {
+  return <ButtonBox>Button</ButtonBox>;
+}
 
 export default Button;
