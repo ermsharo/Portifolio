@@ -11,6 +11,7 @@ export interface ProjectsProps {}
 const ProjectSesionBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap:32px;
 `;
 
 const SessionBox = styled.div`

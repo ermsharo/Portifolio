@@ -4,6 +4,8 @@ import ProjectCard from "../../molecules/ProjectCard";
 import styled from "styled-components";
 import Loading from "../../atoms/Loading";
 import { ProjectRequests } from "../../../services/ProjectsRequests";
+import wpData from '../../../assets/staticData/data.json';
+
 export interface ProjectsCarroselProps {}
 
 const ProjectsBox = styled.div`
@@ -23,6 +25,21 @@ export interface ProjectCardProps {
 
 }
 
+const formatData = (data: any) => {
+  return data.map((item: object) => {
+    return {
+      title: findValueByKey(findValueByKey(item, "title"), "rendered"),
+      description: findValueByKey(findValueByKey(item, "content"), "rendered"),
+      projectSlug: findValueByKey(item, "slug"),
+      projectRepoLink: findValueByKey(item, "productionlink"),
+      projectProdLink: findValueByKey(item, "productionlink"),
+      projectSmallDescription: findValueByKey(item, "small_description"),
+      tags: findValueByKey(item, "tags"),
+    };
+  });
+};
+
+
 const findValueByKey: any = (obj: object, keyToFind: String) => {
   return (
     Object.entries(obj).reduce(
@@ -38,14 +55,11 @@ const findValueByKey: any = (obj: object, keyToFind: String) => {
 };
 
 function ProjectsCarrosel({}: ProjectsCarroselProps) {
-  const [data, error, loading] = ProjectRequests();
 
-  if (loading) {
-    return <Loading />;
-  }
-  if (error) {
-    return <div></div>;
-  }
+
+  const data =  formatData(wpData)
+
+
   console.log("data", data);
 
   return (

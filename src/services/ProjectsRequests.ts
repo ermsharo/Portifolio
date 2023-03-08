@@ -19,27 +19,14 @@ const findValueByKey: any = (obj: object, keyToFind: String) => {
 
 const formatData = (data: any) => {
   return data.map((item: object) => {
-    // const tags = findValueByKey(item, "tags");
-    // const projectSmallDescription = findValueByKey(item, "small_description");
-    // let projectProdLink = findValueByKey(item, "productionlink");
-    // let projectRepoLink = findValueByKey(item, "productionlink");
-    // let projectSlug = findValueByKey(item, "slug");
-    // const title = findValueByKey(findValueByKey(item, "title"), "rendered");
-    // const description = findValueByKey(
-    //   findValueByKey(item, "content"),
-    //   "rendered"
-    // );
     return {
       title: findValueByKey(findValueByKey(item, "title"), "rendered"),
-      description: findValueByKey(
-        findValueByKey(item, "content"),
-        "rendered"
-      ),
+      description: findValueByKey(findValueByKey(item, "content"), "rendered"),
       projectSlug: findValueByKey(item, "slug"),
       projectRepoLink: findValueByKey(item, "productionlink"),
       projectProdLink: findValueByKey(item, "productionlink"),
-      projectSmallDescription:findValueByKey(item, "small_description"),
-      tags:findValueByKey(item, "tags")
+      projectSmallDescription: findValueByKey(item, "small_description"),
+      tags: findValueByKey(item, "tags"),
     };
   });
 };
