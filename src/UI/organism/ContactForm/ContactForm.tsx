@@ -31,15 +31,17 @@ const verifyForms = (name: string, email: string, message: string) => {
 };
 
 function ContactForm({}: ContactFormProps) {
-  const [formErrors , setFormErrors] = useState<string[]>([]);
+  const [formErrors, setFormErrors] = useState<string[]>([]);
 
   const [messageText, setMessageText] = useState<string>("");
 
-  const [toSend, setToSend] = useState({
+  const initState = {
     from_name: "",
     to_name: "Emilio Haro",
     reply_to: "",
-  });
+  };
+
+  const [toSend, setToSend] = useState(initState);
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -51,28 +53,39 @@ function ContactForm({}: ContactFormProps) {
     );
 
     if (verifiedForms.length === 0) {
-      // send(MAIL_SERVICE_ID, MAIL_TEAMPLATE_ID, toSend, USER_ID)
-      //   .then((response) => {
-      //     console.log("SUCCESS!", response.status, response.text);
-      //     setSendError(false);
-      //   })
-      //   .catch((err) => {
-      //     console.log("FAILED...", err);
-      //     setSendError(true);
-      //   });
+      send(
+        MAIL_SERVICE_ID,
+        MAIL_TEAMPLATE_ID,
+        {
+          from_name: toSend.from_name,
+          to_name: toSend.to_name,
+          reply_to: toSend.reply_to,
+          message: messageText,
+        },
+        USER_ID
+      )
+        .then((response) => {
+          // console.log("SUCCESS!", response.status, response.text);
+          setToSend(initState);
+          setMessageText("");
+        })
+        .catch((err) => {
+          console.error("FAILED...", err);
+          setFormErrors(["Failure to send message, try again later"]);
+        });
     } else {
       setFormErrors(verifiedForms);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormErrors([])
+    setFormErrors([]);
     setToSend({ ...toSend, [e.target.name]: e.target.value });
     console.log(toSend);
   };
 
   const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setFormErrors([])
+    setFormErrors([]);
     setMessageText(e.target.value);
   };
 

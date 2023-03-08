@@ -13,7 +13,7 @@ const ErrorBox = styled.div`
   border-radius: 1rem;
   text-align: left;
   font-size: 1rem;
-  margin-top: 1rem; 
+  margin-top: 1rem;
 `;
 
 function ErrorAlert({ errors }: ErrorAlertProps) {
