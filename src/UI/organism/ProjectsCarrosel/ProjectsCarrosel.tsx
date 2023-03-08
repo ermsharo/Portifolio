@@ -5,13 +5,21 @@ import styled from "styled-components";
 import Loading from "../../atoms/Loading";
 import { ProjectRequests } from "../../../services/ProjectsRequests";
 import wpData from "../../../assets/staticData/data.json";
+import Carousel from "nuka-carousel";
 
 export interface ProjectsCarroselProps {}
 
 const ProjectsBox = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+`;
+
+const CarouselElement = styled.div`
+  border: 3px solid blue;
+  width: 100%;
+  height: 100px;
+  background-color: blue;
+  text-align: center;
 `;
 
 export interface ProjectCardProps {
@@ -54,25 +62,42 @@ const findValueByKey: any = (obj: object, keyToFind: String) => {
 
 function ProjectsCarrosel() {
   const data = formatData(wpData);
+  const flickityOptions = {
+    initialIndex: 2,
+  };
 
   console.log("data", data);
 
   return (
-    <ProjectsBox>
-      {data.map((item: ProjectCardProps) => {
-        return (
-          <ProjectCard
-            tags={item.tags}
-            projectSmallDescription={item.projectSmallDescription}
-            projectProdLink={item.projectProdLink}
-            projectRepoLink={item.projectRepoLink}
-            title={item.title}
-            description={item.description}
-            slug={item.projectSlug}
-          />
-        );
-      })}
-    </ProjectsBox>
+    <>
+      {" "}
+      <ProjectsBox></ProjectsBox>
+      <div>
+        <Carousel
+
+          renderCenterLeftControls={({ previousSlide }) => (
+            <button onClick={previousSlide}>Previous</button>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <button onClick={nextSlide}>Next</button>
+          )}
+        >
+          {data.map((item: ProjectCardProps) => {
+            return (
+              <ProjectCard
+                tags={item.tags}
+                projectSmallDescription={item.projectSmallDescription}
+                projectProdLink={item.projectProdLink}
+                projectRepoLink={item.projectRepoLink}
+                title={item.title}
+                description={item.description}
+                slug={item.projectSlug}
+              />
+            );
+          })}
+        </Carousel>
+      </div>
+    </>
   );
 }
 

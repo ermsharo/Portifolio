@@ -8,7 +8,7 @@ const SessionBox = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+
   width: 85%;
   margin: auto;
   padding-top: 35vh;
@@ -20,11 +20,17 @@ const AllProjects = styled.div`
   text-align: right;
 `;
 
+const ProjectsCarroselBox = styled.div`
+  max-height: 50vh;
+`;
+
 function ProjectsSession() {
   return (
     <SessionBox>
       <h1>Projects</h1>
-      <ProjectsCarrosel />
+      <ProjectsCarroselBox>
+        <ProjectsCarrosel />
+      </ProjectsCarroselBox>
 
       <AllProjects>
         <NavigationLink to={{ pathname: "/projects" }}>

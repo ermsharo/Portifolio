@@ -12,7 +12,7 @@ export const HeaderBox = styled.div`
   display: flex;
   justify-content: end;
   gap: 2.5rem;
-
+  z-index: 4;
   position: fixed;
   width: calc(100% - 2rem);
   padding: 1rem;
