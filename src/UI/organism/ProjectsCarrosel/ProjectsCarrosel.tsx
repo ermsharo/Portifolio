@@ -4,7 +4,7 @@ import ProjectCard from "../../molecules/ProjectCard";
 import styled from "styled-components";
 import Loading from "../../atoms/Loading";
 import { ProjectRequests } from "../../../services/ProjectsRequests";
-import wpData from '../../../assets/staticData/data.json';
+import wpData from "../../../assets/staticData/data.json";
 
 export interface ProjectsCarroselProps {}
 
@@ -22,7 +22,6 @@ export interface ProjectCardProps {
   projectSlug: string;
   title: string;
   description: string;
-
 }
 
 const formatData = (data: any) => {
@@ -39,7 +38,6 @@ const formatData = (data: any) => {
   });
 };
 
-
 const findValueByKey: any = (obj: object, keyToFind: String) => {
   return (
     Object.entries(obj).reduce(
@@ -55,10 +53,7 @@ const findValueByKey: any = (obj: object, keyToFind: String) => {
 };
 
 function ProjectsCarrosel({}: ProjectsCarroselProps) {
-
-
-  const data =  formatData(wpData)
-
+  const data = formatData(wpData);
 
   console.log("data", data);
 

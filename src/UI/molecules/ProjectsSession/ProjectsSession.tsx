@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ProjectsCarrosel from "../../organism/ProjectsCarrosel";
+import NavigationLink from "../../atoms/NavigationLink";
+type LinkProps = {};
 
 export interface ProjectsProps {}
 
@@ -30,6 +32,11 @@ const SessionSubtitle = styled.div`
   padding: 2rem;
 `;
 
+const AllProjects = styled.div`
+  font-size: 1.5rem;
+  text-align: right;
+`;
+
 const InfoBox = styled.div``;
 
 function ProjectsSession() {
@@ -38,9 +45,11 @@ function ProjectsSession() {
       <h1>Projects</h1>
       <ProjectsCarrosel />
 
-      <div>
-        <Link to={{ pathname: "/projects" }}> sdasd todos os projetos</Link>
-      </div>
+      <AllProjects>
+        <NavigationLink to={{ pathname: "/projects" }}>
+          Todos os projetos
+        </NavigationLink>
+      </AllProjects>
     </SessionBox>
   );
 }

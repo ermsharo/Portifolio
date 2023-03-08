@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Button } from "../../../styles/generalStyles";
 import { Colors } from "./../../../styles/defaultProps";
 import { Link } from "react-router-dom";
+import NavigationLink from "../../atoms/NavigationLink";
 export interface HeaderProps {}
 
 export const HeaderBox = styled.div`
@@ -63,9 +64,9 @@ function Header({}: HeaderProps) {
         {HeaderOptions.map((item, index) => {
           return (
             <Option key={index}>
-              <Link to={{ pathname: "/", hash: `${item.to}` }}>
+              <NavigationLink to={{ pathname: "/", hash: `${item.to}` }}>
                 {item.name}
-              </Link>
+              </NavigationLink>
             </Option>
           );
         })}
