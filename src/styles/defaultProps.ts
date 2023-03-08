@@ -8,7 +8,7 @@ export const BreakPoints = {
 export const Colors = {
   primaryfontColor: "#daeffc",
   secundaryfontColor: "#b5def9",
-  regularColor: "#0e71b3",
+  regularColor: "#004e92",
   hooverColor: "#1188d8",
   firstBackground: "#020e16",
   secondBackround: "#041c2d",
