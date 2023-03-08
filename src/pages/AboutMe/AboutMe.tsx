@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-export interface AboutMeProps {}
-
-const HomeBannerBoxElements = styled.div`
-  display: grid;
-  grid-template-columns: 60% 40%;
-
-  height: 65%;
-`;
-
 const SessionBox = styled.div`
   display: flex;
   justify-content: center;
@@ -18,21 +9,7 @@ const SessionBox = styled.div`
   margin: auto;
 `;
 
-const SessionTitle = styled.div`
-  font-size: 3.5rem;
-  padding: 1.5rem;
-`;
-
-const SessionSubtitle = styled.div`
-  font-size: 1.5rem;
-  padding: 2rem;
-`;
-
-const InfoBox = styled.div``;
-
-const BannerImage = styled.div``;
-
-function AboutMe({}: AboutMeProps) {
+function AboutMe() {
   return (
     <SessionBox>
       <h1>About me</h1>

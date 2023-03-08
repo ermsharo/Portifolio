@@ -1,9 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { ProjectRequests } from "../../services/ProjectsRequests";
 import Loading from "../../UI/atoms/Loading";
 import Header from "../../UI/molecules/Header";
-import ProjectCard from "../../UI/molecules/ProjectCard";
 import parse from "html-react-parser";
 
 export interface ProjectsProps {}
@@ -65,15 +64,22 @@ function Project() {
         <SessionBox>
           <ProjectSesionBox>
             <ProjectCover>
-              <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.publicdomainpictures.net%2Fpictures%2F40000%2Fvelka%2Fhappy-dog.jpg&f=1&nofb=1&ipt=084b8eed8486ce8fc2e2731be2fcd5abe698c8a6336de5f7fdf759bd57570f32&ipo=images"></img>
+              <img
+                alt="smiling dog"
+                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.publicdomainpictures.net%2Fpictures%2F40000%2Fvelka%2Fhappy-dog.jpg&f=1&nofb=1&ipt=084b8eed8486ce8fc2e2731be2fcd5abe698c8a6336de5f7fdf759bd57570f32&ipo=images"
+              />
             </ProjectCover>
             <div>
               <PageTitleInfo>
                 <h1>{renderObj(project[0]?.title)}</h1>
               </PageTitleInfo>
               <div>{renderObj(project[0]?.description)}</div>
-              <a>{renderObj(project[0]?.projectProdLink)}</a>
-              <a>{renderObj(project[0]?.projectRepoLink)}</a>
+              <a href="www.google.com">
+                {renderObj(project[0]?.projectProdLink)}
+              </a>
+              <a href="www.google.com">
+                {renderObj(project[0]?.projectRepoLink)}
+              </a>
               <div>{renderObj(project[0]?.tags)}</div>
             </div>
           </ProjectSesionBox>

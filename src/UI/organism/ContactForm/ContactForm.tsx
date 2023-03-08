@@ -1,11 +1,8 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { send } from "emailjs-com";
 import { MAIL_TEAMPLATE_ID, MAIL_SERVICE_ID, USER_ID } from "./../../../env";
-import styled from "styled-components";
 import { Button, Input, TextArea } from "../../../styles/generalStyles";
 import ErrorAlert from "../../atoms/ErrorAlert";
-
-export interface ContactFormProps {}
 
 const isMailValid = (email: string) => {
   var re = /\S+@\S+\.\S+/;
@@ -30,7 +27,7 @@ const verifyForms = (name: string, email: string, message: string) => {
   return formErrors;
 };
 
-function ContactForm({}: ContactFormProps) {
+function ContactForm() {
   const [formErrors, setFormErrors] = useState<string[]>([]);
 
   const [messageText, setMessageText] = useState<string>("");

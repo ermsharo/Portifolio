@@ -52,7 +52,7 @@ const findValueByKey: any = (obj: object, keyToFind: String) => {
   );
 };
 
-function ProjectsCarrosel({}: ProjectsCarroselProps) {
+function ProjectsCarrosel() {
   const data = formatData(wpData);
 
   console.log("data", data);

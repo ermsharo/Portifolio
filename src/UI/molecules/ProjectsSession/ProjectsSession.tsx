@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ProjectsCarrosel from "../../organism/ProjectsCarrosel";
 import NavigationLink from "../../atoms/NavigationLink";
 
 export interface ProjectsProps {}
-
 
 const SessionBox = styled.div`
   display: flex;
@@ -14,16 +12,13 @@ const SessionBox = styled.div`
   width: 85%;
   margin: auto;
   padding-top: 35vh;
-  padding-bottom: 5vh
+  padding-bottom: 5vh;
 `;
-
-
 
 const AllProjects = styled.div`
   font-size: 1.5rem;
   text-align: right;
 `;
-
 
 function ProjectsSession() {
   return (

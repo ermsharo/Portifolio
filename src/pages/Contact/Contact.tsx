@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import ContactForm from "../../UI/organism/ContactForm";
 
-export interface ContactProps {}
-
-
 const SessionBox = styled.div`
   display: flex;
   justify-content: center;
@@ -13,12 +10,13 @@ const SessionBox = styled.div`
   margin: auto;
 `;
 
-function Contact({ }: ContactProps) {
-    return ( <SessionBox>
-        <h1>Contact</h1>
-        <ContactForm />
-
-      </SessionBox>);
-};
+function Contact() {
+  return (
+    <SessionBox>
+      <h1>Contact</h1>
+      <ContactForm />
+    </SessionBox>
+  );
+}
 
 export default Contact;

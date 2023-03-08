@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Button } from "../../../styles/generalStyles";
 import { Colors } from "./../../../styles/defaultProps";
-import { Link } from "react-router-dom";
 import NavigationLink from "../../atoms/NavigationLink";
 export interface HeaderProps {}
 
@@ -42,14 +41,6 @@ const HeaderOptionObj = (name: string, hash: string) => {
   return { name: name, to: `#${hash}` };
 };
 
-// const [homeSections, setHomeSections] = useState([
-
-//   'banner_home',
-//   'about_me_home',
-//   'projects_home',
-//   'contact_home'
-// ]);
-
 const HeaderOptions = [
   HeaderOptionObj("Home", "banner_home"),
   HeaderOptionObj("About", "about_me_home"),
@@ -57,7 +48,7 @@ const HeaderOptions = [
   HeaderOptionObj("Contact", "contact_home"),
 ];
 
-function Header({}: HeaderProps) {
+function Header() {
   return (
     <HeaderBox>
       <OptionsBox>

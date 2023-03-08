@@ -17,7 +17,7 @@ const ErrorBox = styled.div`
 `;
 
 function ErrorAlert({ errors }: ErrorAlertProps) {
-  if (errors.length == 0) return <></>;
+  if (errors.length === 0) return <></>;
   return (
     <ErrorBox>
       <ul>

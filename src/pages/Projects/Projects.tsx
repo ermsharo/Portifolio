@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ProjectRequests } from "../../services/ProjectsRequests";
 import Loading from "../../UI/atoms/Loading";
@@ -61,8 +60,7 @@ function Projects() {
       <SessionBox>
         <ProjectsBox>
           {data.map((item: HeaderProps) => {
-
-              console.log("Item: " + item)
+            console.log("Item: " + item);
             return (
               <ProjectCard
                 tags={item.tags}

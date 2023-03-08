@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import HomeLogo from "../../atoms/HomeLogo";
-import { Colors } from "./../../../styles/defaultProps";
 
 export interface HomeBannerProps {}
 

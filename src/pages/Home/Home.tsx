@@ -1,13 +1,10 @@
-import { createRef } from "react";
 import Header from "../../UI/molecules/Header";
 import HomeBanner from "../../UI/molecules/HomeBanner";
 import AboutMe from "../AboutMe";
 import Contact from "../Contact";
-import Projects from "../Projects";
 import ProjectsSession from "../../UI/molecules/ProjectsSession";
-export interface HomeProps {}
 
-function Home({}: HomeProps) {
+function Home() {
   return (
     <>
       <Header />

@@ -1,10 +1,8 @@
 import GlobalStyle from "./styles/globalStyles";
 import { Helmet } from "react-helmet";
-import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
-import Header from "./UI/molecules/Header";
 import Footer from "./UI/molecules/Footer";
 import Projects from "./pages/Projects";
 import Project from "./pages/Project";
