@@ -2,16 +2,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ProjectsCarrosel from "../../organism/ProjectsCarrosel";
 import NavigationLink from "../../atoms/NavigationLink";
-type LinkProps = {};
 
 export interface ProjectsProps {}
 
-const HomeBannerBoxElements = styled.div`
-  display: grid;
-  grid-template-columns: 60% 40%;
-
-  height: 65%;
-`;
 
 const SessionBox = styled.div`
   display: flex;
@@ -20,24 +13,17 @@ const SessionBox = styled.div`
   height: 100vh;
   width: 85%;
   margin: auto;
+  padding-top: 35vh;
+  padding-bottom: 5vh
 `;
 
-const SessionTitle = styled.div`
-  font-size: 3.5rem;
-  padding: 1.5rem;
-`;
 
-const SessionSubtitle = styled.div`
-  font-size: 1.5rem;
-  padding: 2rem;
-`;
 
 const AllProjects = styled.div`
   font-size: 1.5rem;
   text-align: right;
 `;
 
-const InfoBox = styled.div``;
 
 function ProjectsSession() {
   return (
