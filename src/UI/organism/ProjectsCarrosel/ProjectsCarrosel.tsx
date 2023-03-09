@@ -23,7 +23,7 @@ const CarouselElement = styled.div`
 `;
 
 export interface ProjectCardProps {
-  tags?: string[];
+  tags?: string;
   projectSmallDescription: string;
   projectProdLink?: string;
   projectRepoLink?: string;
@@ -66,15 +66,12 @@ function ProjectsCarrosel() {
     initialIndex: 2,
   };
 
-  console.log("data", data);
-
   return (
     <>
       {" "}
       <ProjectsBox></ProjectsBox>
       <div>
         <Carousel
-
           renderCenterLeftControls={({ previousSlide }) => (
             <button onClick={previousSlide}>Previous</button>
           )}

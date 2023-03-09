@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box } from "../../../styles/generalStyles";
+import TagRender from "../TagRender";
 
 export interface ProjectCardProps {
-  tags?: string[];
+  tags?: string;
   projectSmallDescription: string;
   projectProdLink?: string;
   projectRepoLink?: string;
@@ -73,7 +74,7 @@ function ProjectCard({
               {projectSmallDescription}
             </ProjectCardDescription>
             <ProjectCardDescription>{slug}</ProjectCardDescription>
-            <ProjectCardTags>{tags}</ProjectCardTags>
+            <ProjectCardTags><TagRender tags ={tags}/></ProjectCardTags>
           </ProjectCardInfo>
         </ProjectCardBox>
       </Box>

@@ -30,7 +30,7 @@ const PageTitleInfo = styled.div`
 `;
 
 export interface HeaderProps {
-  tags: string[];
+  tags: string;
   projectSmallDescription: string;
   projectProdLink: string;
   projectRepoLink: string;

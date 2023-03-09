@@ -3,6 +3,9 @@ import HomeBanner from "../../UI/molecules/HomeBanner";
 import AboutMe from "../AboutMe";
 import Contact from "../Contact";
 import ProjectsSession from "../../UI/molecules/ProjectsSession";
+import MarkDown from "../../UI/atoms/Markdown";
+import TagImage from "../../UI/atoms/TagImage";
+import TagRender from "../../UI/molecules/TagRender";
 
 function Home() {
   return (
