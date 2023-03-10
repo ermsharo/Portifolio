@@ -55,6 +55,7 @@ function Project() {
     );
 
     const renderObj = (value: string) => {
+      console.log("value", value)
       if (value) return parse(value);
     };
 
